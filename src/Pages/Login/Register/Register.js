@@ -1,18 +1,28 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import './Register.css'
+import { useCreateUserWithEmailAndPassword } from 'react-firebase-hooks/auth';
+import auth from '../../../firebase.init';
 
 const Register = () => {
+
+
 
     const navigate = useNavigate();
     const navigateLogin = () => {
         navigate(`/login`)
     }
 
+
+
     const handleRegister = event => {
         event.preventDefault();
         //  console.log(event.target.email.value)
-        console.log(event.target.password.value)
+        // console.log(event.target.password.value)
+        const name = event.target.name.value;
+        const email = event.target.email.value;
+        const password = event.target.password.value;
+
     }
 
     return (
